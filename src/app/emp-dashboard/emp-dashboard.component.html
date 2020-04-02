@@ -1,0 +1,96 @@
+
+<jqxGrid #myGrid [theme]="energyblue" 
+(onCellbeginedit)="myGridOnCellBeginEdit($event)" (onCellendedit)="myGridOnCellEndEdit($event)"
+[width]="getWidth()" [source]="dataAdapter" [columns]="columns" cellsrenderer
+[pageable]="true" [autoheight]="true" [sortable]="true" 
+[altrows]="true"  [enabletooltips]="true"  [editable]="true"  [filterable]="true" [enabletooltips]="true"
+[selectionmode]="'multiplecellsadvanced'" [columngroups]="columngroups">
+</jqxGrid>
+<!-- <div style="font-size: 12px; font-family: Verdana; margin-top: 30px;">
+    <div #beginEdit></div>
+    <div #endEdit style="margin-top: 10px;"></div>
+</div> -->
+<div>
+    <button (click)="addNewEntry()">add new entry</button>
+</div>
+
+
+<jqxWindow #myWindow [width]="270" [height]="300" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
+    <div>Add new Employee</div>
+    <div style="overflow: hidden;">
+        <table>
+            <tr>
+                <td align="right">First Name:</td>
+                <td align="left">
+                    <jqxInput #firstname [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Last Name:</td>
+                <td align="left">
+                    <jqxInput #lastname [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">DOB:</td>
+                <td align="left">
+                   <jqxInput #dob [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">perm_Address:</td>
+                <td align="left">
+                   <jqxInput #perm_Address [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">curnt_Address:</td>
+                <td align="left">
+                   <jqxInput #curnt_Address [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">department:</td>
+                <td align="left">
+                   <jqxInput #department [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">training_attnd:</td>
+                <td align="left">
+                   <jqxInput #training_attnd [width]="150" [height]="23"></jqxInput>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">phoneno:</td>
+                <td align="left">
+                    <jqxNumberInput #phoneno
+                        [width]="150" [height]="23" [decimalDigits]="0" ></jqxNumberInput>
+                       
+                
+                </td>
+            </tr>
+            
+           
+            <tr>
+              <td align="right"></td>
+              <td style="padding-top: 50px;" align="right">
+                  <jqxButton style="margin-right: 5px;" (onClick)="saveBtn()">
+                      Save
+                  </jqxButton>
+                  <jqxButton style="margin-right: 5px;" (onClick)="cancelBtn()">
+                      Cancel
+                  </jqxButton>
+              </td>
+            </tr>
+        </table>
+    </div>
+</jqxWindow>
+
+
+
+
+
+  
+  
